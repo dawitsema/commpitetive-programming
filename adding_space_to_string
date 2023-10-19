@@ -1,0 +1,12 @@
+class Solution:
+    def addSpaces(self, s: str, spaces: List[int]) -> str:
+        store = []
+        space_count = 0
+        for i in range(len(s)):
+            if space_count < len(spaces) and spaces[space_count] == i:
+                store.append(" ")
+                space_count += 1
+                store.append(s[i])
+            else:
+                store.append(s[i])
+        return "".join(store)
